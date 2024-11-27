@@ -1,14 +1,144 @@
-<html>
-  <head>
-    <title>七（9）班白嫖资源站</title>
-  </head>
-  <body style="background-color: #f2f1f1;">
-    
-    <center><h1>七（9）班白嫖资源站</h1>
-    <img src="liuzhenhua.png" alt="刘振华" />
-    <h2>众所周知，七九班是一个非常和谐友爱的班级，因此，为了我们的学习成绩进一步提升，站长决定！制作本站</h2>
-    <h2>本站制作手法拙劣，望大家理解！！！</h2>
-    
-    </center>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七九资源分享</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth; /* 平滑滚动效果 */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ddd;
+            background-color: rgba(255, 255, 255, 0.1); /* 悬停时的背景颜色 */
+            transform: scale(1.05); /* 轻微放大效果 */
+        }
+
+        .intro {
+            text-align: center;
+            padding: 50px;
+            background-color: #f1f1f1;
+        }
+
+        .resource-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+
+            .resource-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">七九资源分享</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="resources.html">资源</a></li>
+                <li><a href="about.html">关于本站</a></li>
+                <li><a href="contact.html">联系站长</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro" id="home">
+            <h1>欢迎来到七九资源分享网站</h1>
+            <p><strong>探索无限可能，分享知识与智慧。</strong><br>本站由雪碧bir制作，致力于为您提供最优质的资源分享平台。</p>
+        </section>
+    </main>
+
+    <footer>
+        <center><p>版权所有 © 2024 班级：七九 个人：雪碧bir</p></center>
+    </footer>
+
+    <script>
+        // 简单的动画效果，当页面加载完成后，卡片淡入
+        window.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.opacity = 0;
+                card.offsetHeight; // 触发重绘
+                card.style.transition = 'opacity 0.5s ease-in';
+                card.style.opacity = 1;
+            });
+        });
+    </script>
+
+</body>
 </html>
