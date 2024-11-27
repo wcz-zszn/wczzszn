@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源页面</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ddd;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .resource-list {
+            margin-top: 20px;
+        }
+
+        .resource-item {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .resource-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">资源分享</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="resources.html" class="active">资源</a></li>
+                <li><a href="about.html">关于本站</a></li>
+                <li><a href="contact.html">联系站长</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="resource-list">
+            <h2>资源列表</h2>
+            <!-- 资源项 -->
+            <div class="resource-item">
+                <img src="image1.jpg" alt="资源1">
+                <h3>资源1</h3>
+                <p>资源描述...</p>
+                <a href="#" class="btn">下载</a>
+            </div>
+            <!-- 更多资源项 -->
+        </section>
+    </main>
+
+    <footer>
+        <center><p>版权所有 © 2024 资源分享网站</p></center>
+    </footer>
+
+</body>
+</html>

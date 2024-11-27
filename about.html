@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于本站 - 七九资源分享</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ddd;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .about-section {
+            margin-top: 20px;
+        }
+
+        .about-section h2 {
+            text-align: center;
+        }
+
+        .about-section p {
+            text-align: justify;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            text-align: center;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">七九资源分享</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="resources.html">资源</a></li>
+                <li><a href="about.html" class="active">关于本站</a></li>
+                <li><a href="contact.html">联系站长</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="about-section">
+            <h2>关于七九资源分享</h2>
+            <h4>欢迎来到七九资源分享网站，本站由雪碧bir制作，旨在分享高质量的学习资源和实用工具。我们致力于打造一个资源丰富、更新及时的平台，为广大网友提供便利。</h4>
+            <h4>在这里，您可以找到各种学习资料、软件工具、技术文档等资源。我们鼓励用户上传和分享自己的资源，共同构建一个开放、共享的网络社区。</h4>
+        </section>
+    </main>
+
+    <footer>
+        <center><p>版权所有 © 2024 班级：七九 个人：雪碧bir</p></center>
+    </footer>
+
+</body>
+</html>
