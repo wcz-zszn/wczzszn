@@ -76,6 +76,36 @@
             background-color: #4cae4c;
         }
 
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #4cae4c;
+        }
+
+        .no-results {
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+        }
+
         @media screen and (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -103,10 +133,16 @@
     </header>
 
     <main class="container">
+        <section class="search-container">
+            <input type="text" id="searchInput" placeholder="搜索资源...">
+            <button onclick="filterResources()">搜索</button>
+        </section>
+
         <section class="resource-list">
             <h2>资源列表(文件打开密码：jzxl)</h2>
+            <div id="noResults" class="no-results" style="display: none;">乱搜什么？我这没有！清空搜索栏再点击搜索显示全部资源！！！</div>
             <!-- 资源项 -->
-            <div class="resource-item">
+            <div class="resource-item" data-tags="极域杀手 退出软件">
                 <h3>极域杀手（退出极域软件）</h3>
                 <p>众所周知，机房中有一个名为“极域课堂管理软件”的Rubbish软件……</p>
                 <p>IN fact，退出它十分easy，但每节课都是有作业的，我们怎么才能在既能认真听课又能干自己想干的事情呢？</p>
@@ -120,6 +156,27 @@
     <footer>
         <center><p>版权所有 © 2024 资源分享网站</p></center>
     </footer>
+
+    <script>
+        function filterResources() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const resourceItems = document.querySelectorAll('.resource-item');
+            const noResults = document.getElementById('noResults');
+            let found = false;
+
+            resourceItems.forEach(item => {
+                const isMatch = item.getAttribute('data-tags').toLowerCase().includes(searchTerm) || item.textContent.toLowerCase().includes(searchTerm);
+                item.style.display = isMatch ? '' : 'none';
+                if (isMatch) found = true;
+            });
+
+            if (!found) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
