@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七九官网</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ddd;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .links-item {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9f9f9; /* 增加背景颜色 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加阴影和变换效果 */
+        }
+
+        .links-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 鼠标悬停时的阴影效果 */
+        }
+
+        .links-item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">七九官网</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="resources.html">资源</a></li>
+                <li><a href="about.html">关于本站</a></li>
+                <li><a href="contact.html">联系站长</a></li>
+                <li><a href="links.html" class="active">友情链接</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="links-list">
+            <h2>友情链接</h2>
+            <!-- 链接项 -->
+            <div class="links-item">
+                <h3>Kimi(AI)</h3>
+                <p>此网站为国内AI大模型，较为成熟，登陆后无使用限制</p>
+                <p>个人体验：脑子挺好的</p>
+                <a href="https://kimi.moonshot.cn/" target="_blank" class="btn">GO</a>
+            </div>
+            <div class="links-item">
+                <h3>Poki(游戏集合)</h3>
+                <p>此网站为小游戏集合，需要网络，因服务器在国外所以有点卡</p>
+                <p>个人体验：不知道说啥</p>
+                <a href="https://poki.com/zh#utm_source=china" target="_blank" class="btn">GO</a>
+            </div>
+            <div class="links-item">
+                <h3>Surf(网上冲浪)</h3>
+                <p>此网站为微软官网推出的冲浪小游戏，推荐大家记住网站：edge://surf/,只能用Edge浏览器打开</p>
+                <p>无需网络</p>
+                <p>作弊代码（代开网站后什么也不管直接输）</p>
+                <p>1、microsoft（无限血）</p>
+                <p>2、edge（无限能量）</p>
+                <p>个人体验：不错</p>
+                <a href="edge://surf/" target="_blank" class="btn">无法使用超链接打开，到edge浏览器里输edge://surf即可跳转</a>
+            </div>
+            <!-- 链接项 -->
+        </section>
+    </main>
+
+    <footer>
+        <center><p>版权所有 © 2024 资源分享网站</p></center>
+    </footer>
+
+</body>
+</html>
