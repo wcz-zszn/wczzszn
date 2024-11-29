@@ -1,182 +1,275 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>资源页面</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
     <style>
-        body, h1, p {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+      }
 
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar {
+        background-color: #242424;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-cards {
+        gap: 30px; /* 增加卡片之间的间距 */
+      }
+
+      .card {
+        border-radius: 8px; /* 增加卡片的圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加卡片的阴影 */
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+      }
+
+      .btn {
+        border-radius: 8px; /* 增加按钮的圆角 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 增加按钮的阴影 */
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 悬停时增加阴影 */
+      }
+
+      footer {
+        background-color: #242424;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      #backToTopButton {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #backToTopButton:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      body,
+      .navbar,
+      .intro,
+      .quote-of-the-day,
+      .latest-updates,
+      .update-item,
+      .card,
+      .btn {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      body,
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .nav-links li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #ddd;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .resource-list {
+        margin-top: 20px;
+      }
+
+      .resource-item {
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .resource-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #4cae4c;
+      }
+
+      .search-container {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .search-container input[type="text"] {
+        padding: 10px;
+        width: 80%;
+        margin-right: 10px;
+      }
+
+      .search-container button {
+        padding: 10px 20px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .search-container button:hover {
+        background-color: #4cae4c;
+      }
+
+      .no-results {
+        text-align: center;
+        color: red;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
+          flex-direction: column;
         }
 
         .nav-links li {
-            list-style: none;
-            display: inline-block;
-            margin-left: 20px;
+          margin-bottom: 10px;
         }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ddd;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .resource-list {
-            margin-top: 20px;
-        }
-
-        .resource-item {
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .resource-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #4cae4c;
-        }
-
-        .search-container {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .search-container input[type="text"] {
-            padding: 10px;
-            width: 80%;
-            margin-right: 10px;
-        }
-
-        .search-container button {
-            padding: 10px 20px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .search-container button:hover {
-            background-color: #4cae4c;
-        }
-
-        .no-results {
-            text-align: center;
-            color: red;
-            margin-top: 20px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-
-            .nav-links li {
-                margin-bottom: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">七九官网</div>
-            <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="resources.html" class="active">资源</a></li>
-                <li><a href="about.html">关于本站</a></li>
-                <li><a href="contact.html">联系站长</a></li>
-                <li><a href="links.html">友情链接</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">七九官网</div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="resources.html" class="active"><i class="fa fa-book"></i> 资源</a></li>
+            <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a></li>
+            <li><a href="links.html"><i class="fa fa-link"></i> 友情链接</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <section class="search-container">
-            <input type="text" id="searchInput" placeholder="搜索资源...">
-            <button onclick="filterResources()">搜索</button>
-        </section>
+      <section class="search-container">
+        <input type="text" id="searchInput" placeholder="搜索资源..." />
+        <button onclick="filterResources()">搜索</button>
+      </section>
 
-        <section class="resource-list">
-            <h2>资源列表(文件打开密码：jzxl)</h2>
-            <div id="noResults" class="no-results" style="display: none;">乱搜什么？我这没有！清空搜索栏再点击搜索显示全部资源！！！</div>
-            <!-- 资源项 -->
-            <div class="resource-item" data-tags="极域杀手 退出软件">
-                <h3>极域杀手（退出极域软件）</h3>
-                <p>众所周知，机房中有一个名为“极域课堂管理软件”的Rubbish软件……</p>
-                <p>IN fact，退出它十分easy，但每节课都是有作业的，我们怎么才能在既能认真听课又能干自己想干的事情呢？</p>
-                <p>这个软件名为JiYuTrainer，相信他可以帮助你（不是广告）</p>
-                <a href="https://wwqj.lanzouv.com/iMc8g2g01noh" target="_blank" class="btn">I want it</a>
-            </div>
-            <!-- 更多资源项 -->
-        </section>
+      <section class="resource-list">
+        <h2>资源列表(文件打开密码：jzxl)</h2>
+        <div id="noResults" class="no-results" style="display: none">
+          乱搜什么？我这没有！清空搜索栏再点击搜索显示全部资源！！！
+        </div>
+        <!-- 资源项 -->
+        <div class="resource-item" data-tags="极域杀手 退出软件">
+          <h3>极域杀手（退出极域软件）</h3>
+          <p>众所周知，机房中有一个名为“极域课堂管理软件”的Rubbish软件……</p>
+          <p>
+            IN
+            fact，退出它十分easy，但每节课都是有作业的，我们怎么才能在既能认真听课又能干自己想干的事情呢？
+          </p>
+          <p>这个软件名为JiYuTrainer，相信他可以帮助你（不是广告）</p>
+          <a
+            href="https://wwqj.lanzouv.com/iMc8g2g01noh"
+            target="_blank"
+            class="btn"
+            >I want it</a
+          >
+        </div>
+        <!-- 更多资源项 -->
+      </section>
     </main>
 
     <footer>
-        <center><p>版权所有 © 2024 资源分享网站</p></center>
+      <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
     </footer>
 
     <script>
-        function filterResources() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const resourceItems = document.querySelectorAll('.resource-item');
-            const noResults = document.getElementById('noResults');
-            let found = false;
+      function filterResources() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const resourceItems = document.querySelectorAll(".resource-item");
+        const noResults = document.getElementById("noResults");
+        let found = false;
 
-            resourceItems.forEach(item => {
-                const isMatch = item.getAttribute('data-tags').toLowerCase().includes(searchTerm) || item.textContent.toLowerCase().includes(searchTerm);
-                item.style.display = isMatch ? '' : 'none';
-                if (isMatch) found = true;
-            });
+        resourceItems.forEach((item) => {
+          const isMatch =
+            item.getAttribute("data-tags").toLowerCase().includes(searchTerm) ||
+            item.textContent.toLowerCase().includes(searchTerm);
+          item.style.display = isMatch ? "" : "none";
+          if (isMatch) found = true;
+        });
 
-            if (!found) {
-                noResults.style.display = 'block';
-            } else {
-                noResults.style.display = 'none';
-            }
+        if (!found) {
+          noResults.style.display = "block";
+        } else {
+          noResults.style.display = "none";
         }
+      }
     </script>
-
-</body>
+  </body>
 </html>
