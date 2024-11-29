@@ -1,143 +1,273 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>七九官网</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
     <style>
-        body, h1, p {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+      body,
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
 
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .nav-links li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #ddd;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .links-item {
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
+        background-color: #f9f9f9; /* 增加背景颜色 */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加阴影和变换效果 */
+      }
+
+      .links-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠标悬停时的阴影效果 */
+      }
+
+      .links-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #4cae4c;
+      }
+
+      .search-box input[type="text"] {
+        padding: 10px;
+        width: calc(100% - 110px);
+      }
+
+      .search-box input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .search-box input[type="submit"]:hover {
+        background-color: #4cae4c;
+      }
+
+      @media screen and (max-width: 768px) {
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
+          flex-direction: column;
         }
 
         .nav-links li {
-            list-style: none;
-            display: inline-block;
-            margin-left: 20px;
+          margin-bottom: 10px;
         }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ddd;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .links-item {
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9; /* 增加背景颜色 */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加阴影和变换效果 */
-        }
-
-        .links-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 鼠标悬停时的阴影效果 */
-        }
-
-        .links-item img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #4cae4c;
-        }
-
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
-
-            .nav-links li {
-                margin-bottom: 10px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">七九官网</div>
-            <ul class="nav-links">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="resources.html">资源</a></li>
-                <li><a href="about.html">关于本站</a></li>
-                <li><a href="contact.html">联系站长</a></li>
-                <li><a href="links.html" class="active">友情链接</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">七九官网</div>
+        <ul class="nav-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="resources.html">资源</a></li>
+          <li><a href="about.html">关于本站</a></li>
+          <li><a href="contact.html">联系站长</a></li>
+          <li><a href="links.html" class="active">友情链接</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <section class="links-list">
-            <h2>友情链接</h2>
-            <!-- 链接项 -->
-            <div class="links-item">
-                <h3>Kimi(AI)</h3>
-                <p>此网站为国内AI大模型，较为成熟，登陆后无使用限制</p>
-                <p>个人体验：脑子挺好的</p>
-                <a href="https://kimi.moonshot.cn/" target="_blank" class="btn">GO</a>
-            </div>
-            <div class="links-item">
-                <h3>Poki(游戏集合)</h3>
-                <p>此网站为小游戏集合，需要网络，因服务器在国外所以有点卡</p>
-                <p>个人体验：不知道说啥</p>
-                <a href="https://poki.com/zh#utm_source=china" target="_blank" class="btn">GO</a>
-            </div>
-            <div class="links-item">
-                <h3>Surf(网上冲浪)</h3>
-                <p>此网站为微软官网推出的冲浪小游戏，推荐大家记住网站：edge://surf/,只能用Edge浏览器打开</p>
-                <p>无需网络</p>
-                <p>作弊代码（代开网站后什么也不管直接输）</p>
-                <p>1、microsoft（无限血）</p>
-                <p>2、edge（无限能量）</p>
-                <p>个人体验：不错</p>
-                <a href="edge://surf/" target="_blank" class="btn">无法使用超链接打开，到edge浏览器里输edge://surf即可跳转</a>
-            </div>
-            <!-- 链接项 -->
-        </section>
+      <div class="search-box">
+        <input type="text" id="searchQuery" placeholder="搜索..." />
+        <input type="submit" value="搜索" onclick="searchLinks()" />
+      </div>
+      <div id="searchResults"></div>
+      <div id="noResults" style="display: none"><center>无结果</center></div>
+      <section class="links-list">
+        <h2>友情链接</h2>
+        <!-- 链接项 -->
+        <div class="links-item">
+          <h3>Kimi(AI)</h3>
+          <p>
+            此网站为国内AI大模型，较为成熟，登陆后无使用限制（下面的文字来自官网）
+          </p>
+          <p>
+            Kimi
+            是一个有着超大“内存”的智能助手，可以一口气读完二十万字的小说，还会上网冲浪，快来跟他聊聊吧
+          </p>
+          <p>个人体验：脑子挺好的</p>
+          <a href="https://kimi.moonshot.cn/" target="_blank" class="btn">GO</a>
+        </div>
+        <div class="links-item">
+          <h3>Poki(游戏集合)</h3>
+          <p>此网站为小游戏集合，需要网络，因服务器在国外所以有点卡</p>
+          <p>个人体验：不知道说啥</p>
+          <a
+            href="https://poki.com/zh#utm_source=china"
+            target="_blank"
+            class="btn"
+            >GO</a
+          >
+        </div>
+        <div class="links-item">
+          <h3>Surf(网上冲浪)</h3>
+          <p>
+            此网站为微软官网推出的冲浪小游戏，推荐大家记住网站：edge://surf/,只能用Edge浏览器打开
+          </p>
+          <p>无需网络</p>
+          <p>作弊代码（代开网站后什么也不管直接输）</p>
+          <p>1、microsoft（无限血）</p>
+          <p>2、edge（无限能量）</p>
+          <p>个人体验：不错</p>
+          <a href="edge://surf/" target="_blank" class="btn"
+            >无法使用超链接打开，到edge浏览器里输edge://surf即可跳转</a
+          >
+        </div>
+        <div class="links-item">
+          <h3>文心一言</h3>
+          <p>
+            此网站为国内AI大模型，较为成熟，登陆后无使用限制（下面的文字来自官网）
+          </p>
+          <p>文心一言既是你的智能伙伴,可以陪你聊天、回答问题、画图识图;</p>
+          <p>
+            也是你的AI助手,可以提供灵感、撰写文案、阅读文档、智能翻译,帮你高效完成工作和学习任务。
+          </p>
+          <p>个人体验：脑子挺好的</p>
+          <a href="https://yiyan.baidu.com/" target="_blank" class="btn">GO</a>
+        </div>
+        <div class="links-item">
+          <h3>全历史</h3>
+          <p>一个可以从艺术、文化、历史人物等多重角度看各国历史的网站。</p>
+          <p>
+            它不是用单一时间视角来看待历史，你可以从艺术、书籍、人物、古籍等视角来看历史的发展，对于宏观了解历史很有帮助。
+          </p>
+          <p>个人体验：学历史去吧</p>
+          <a href="https://www.allhistory.com/" target="_blank" class="btn"
+            >GO</a
+          >
+        </div>
+        <div class="links-item">
+          <h3>知妖</h3>
+          <p>这个网站记录了中国古今的妖怪，并且会注明来源，方便追根溯源。</p>
+          <p>
+            尤其是需要做妖怪方面的IP的时候，就可以直接在这个网站上找，不用自己去查找大量资料。
+          </p>
+          <p>
+            经常逛逛这个网站也可以了解一些古代的妖怪文化，说不定就能成为灵感创意来源。
+          </p>
+          <p>个人体验：奇奇怪怪</p>
+          <a href="https://www.cbaigui.com/" target="_blank" class="btn">GO</a>
+        </div>
+        <div class="links-item">
+            <h3>在线喂金鱼</h3>
+            <p>一个非常有趣的网站，可以在线喂金鱼，非常治愈，适合放松心情。</p>
+            <p>个人体验：奇奇怪怪</p>
+            <a href="https://goldfishies.com/" target="_blank" class="btn">GO</a>
+          </div>
+        <!-- 链接项 -->
+      </section>
     </main>
 
     <footer>
-        <center><p>版权所有 © 2024 资源分享网站</p></center>
+      <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
     </footer>
 
-</body>
+    <script>
+      function searchLinks() {
+        var searchQuery = document
+          .getElementById("searchQuery")
+          .value.trim()
+          .toLowerCase(); // 去除前后空格并转换为小写
+        var searchResults = document.getElementById("searchResults");
+        var noResults = document.getElementById("noResults");
+
+        if (searchQuery === "") {
+          // 如果搜索词为空，清空搜索结果并隐藏“无结果”信息
+          searchResults.innerHTML = "";
+          noResults.style.display = "none";
+          return; // 退出函数
+        }
+
+        searchResults.innerHTML = ""; // 清空之前的搜索结果
+        noResults.style.display = "none"; // 默认隐藏无结果信息
+
+        var found = false;
+        var linksItems = document.querySelectorAll(".links-item");
+
+        linksItems.forEach(function (item) {
+          var title = item.querySelector("h3").textContent.toLowerCase();
+          var description = item.querySelector("p").textContent.toLowerCase();
+          if (
+            title.includes(searchQuery) ||
+            description.includes(searchQuery)
+          ) {
+            found = true;
+            var cloneItem = item.cloneNode(true);
+            // 移除原有的链接和按钮，只保留内容
+            cloneItem.querySelectorAll("a").forEach(function (link) {
+              link.remove();
+            });
+            searchResults.appendChild(cloneItem);
+          }
+        });
+
+        if (!found) {
+          noResults.style.display = "block"; // 如果没有找到结果，显示“无结果”信息
+        }
+      }
+    </script>
+  </body>
 </html>
