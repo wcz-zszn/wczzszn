@@ -1,213 +1,413 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>七九官网</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
     <style>
-        body, h1, p {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-        }
+      body {
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
 
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+      }
+
+      a:hover {
+        color: var(--secondary-color);
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn {
+        transition: all 0.3s ease;
+      }
+
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .container {
+        padding: 2rem;
+      }
+
+      .card {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .resource-cards {
+          flex-direction: column;
+        }
+      }
+
+      .loading {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #3498db;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar {
+        background-color: #242424;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-cards {
+        gap: 30px; /* 增加卡片之间的间距 */
+      }
+
+      .card {
+        border-radius: 8px; /* 增加卡片的圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加卡片的阴影 */
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+      }
+
+      .btn {
+        border-radius: 8px; /* 增加按钮的圆角 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 增加按钮的阴影 */
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 悬停时增加阴影 */
+      }
+
+      footer {
+        background-color: #242424;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      #backToTopButton {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #backToTopButton:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      body,
+      .navbar,
+      .intro,
+      .quote-of-the-day,
+      .latest-updates,
+      .update-item,
+      .card,
+      .btn {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      body,
+      h1,
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .nav-links li {
+        list-style: none;
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #ddd;
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+      }
+
+      .intro {
+        text-align: center;
+        padding: 50px;
+        background-color: #f1f1f1;
+      }
+
+      .intro h1 {
+        margin-bottom: 20px; /* 增加标题与第一段文字之间的距离 */
+      }
+
+      .intro p {
+        margin-bottom: 20px; /* 增加段落之间的距离 */
+      }
+
+      .quote-of-the-day {
+        text-align: center;
+        padding: 20px;
+        background-color: #f1f1f1;
+        margin: 20px 0;
+        font-style: italic;
+      }
+
+      .resource-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .card {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #5cb85c;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #4cae4c;
+      }
+
+      @media screen and (max-width: 768px) {
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
+          flex-direction: column;
         }
 
         .nav-links li {
-            list-style: none;
-            display: inline-block;
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ddd;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-        }
-
-        .intro {
-            text-align: center;
-            padding: 50px;
-            background-color: #f1f1f1;
-        }
-
-        .intro h1 {
-            margin-bottom: 20px; /* 增加标题与第一段文字之间的距离 */
-        }
-
-        .intro p {
-            margin-bottom: 20px; /* 增加段落之间的距离 */
-        }
-
-        .quote-of-the-day {
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-            margin: 20px 0;
-            font-style: italic;
+          margin-bottom: 10px;
         }
 
         .resource-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+          flex-direction: column;
         }
+      }
 
-        .card {
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      .latest-updates {
+        background-color: #f1f1f1;
+        padding: 20px;
+        text-align: center;
+      }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+      .latest-updates h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
 
-        .card img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 10px;
-        }
+      .update-item {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 20px;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .btn {
-            display: inline-block;
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+      .update-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-        .btn:hover {
-            background-color: #4cae4c;
-        }
+      .update-item:not(:last-child) {
+        margin-bottom: 20px;
+      }
 
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
+      #backToTopButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #5cb85c;
+        color: white;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        display: none;
+      }
 
-            .nav-links li {
-                margin-bottom: 10px;
-            }
-
-            .resource-cards {
-                flex-direction: column;
-            }
-        }
-        .latest-updates {
-            background-color: #f1f1f1;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .latest-updates h2 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .update-item {
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 20px;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .update-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .update-item:not(:last-child) {
-            margin-bottom: 20px;
-        }
+      #backToTopButton:hover {
+        background-color: #4cae4c;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">七九官网</div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">首页</a></li>
-                <li><a href="resources.html">资源</a></li>
-                <li><a href="about.html">关于本站</a></li>
-                <li><a href="contact.html">联系站长</a></li>
-                <li><a href="links.html">友情链接</a></li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">七九官网</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="resources.html"><i class="fa fa-book"></i> 资源</a></li>
+            <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a></li>
+            <li><a href="links.html"><i class="fa fa-link"></i> 友情链接</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="intro" id="home">
-            <h1><strong>欢迎来到七九班官网</strong></h1>
-            <p><strong>探索无限可能，分享知识与智慧。</strong></p>
-            <p>本站由雪碧bir（王崇治）制作，致力于为您提供最优质的资源分享平台。</p>
-            <p><strong>特别鸣谢 ：李乐童（宣传）</strong></p>
-        </section>
-        
-        <section class="quote-of-the-day">
-            <h2>每日一句</h2>
-            <p>人皆知有用之用，而莫知无用之用也。 ---《庄子》</p>
-        </section>
+      <section class="intro" id="home">
+        <h1><strong>欢迎来到七九班官网</strong></h1>
+        <p><strong>探索无限可能，分享知识与智慧。</strong></p>
+        <p>本站由雪碧bir（王崇治）制作，致力于为您提供最优质的资源分享平台。</p>
+        <p><strong>特别鸣谢 ：李乐童（宣传）</strong></p>
+      </section>
 
-        <section class="latest-updates">
-            <h2>最新动态</h2>
-            <div class="update-item">
-                <h3>新增友情链接</h3>
-                <p>2024.11.28增加友情链接部分，其中分享有用、有趣的网站，可直达网站</p>
-            </div>
-            <div class="update-item">
-                <h3>新增每日一句</h3>
-                <p>2024.11.28增加每日一句部分，持续更新好句</p>
-            </div>
-            <div class="update-item">
-                <h3>新增最新动态</h3>
-                <p>2024.11.28增加最新动态部分，持续记录更新内容</p>
-            </div>
-            <!-- 更多更新 -->
-        </section>
+      <section class="quote-of-the-day">
+        <h2>每日一句</h2>
+        <p>
+          无论种子散落在何处，都会长出一棵树，向着天空，挣扎生长。
+          ---贝蒂·史密斯
+        </p>
+      </section>
+
+      <section class="latest-updates">
+        <h2>最新动态</h2>
+        <div class="update-item">
+            <h3>新增导航栏图标</h3>
+            <p>
+              2024.11.29增加导航栏图标
+            </p>
+          </div>
+          <div class="update-item">
+            <h3>更新友情链接内容</h3>
+            <p>
+              2024.11.29更新友情链接内容
+            </p>
+          </div>
+        <div class="update-item">
+          <h3>新增友情链接</h3>
+          <p>
+            2024.11.28增加友情链接部分，其中分享有用、有趣的网站，可直达网站
+          </p>
+        </div>
+        <div class="update-item">
+          <h3>新增每日一句</h3>
+          <p>2024.11.28增加每日一句部分，持续更新好句</p>
+        </div>
+        <div class="update-item">
+          <h3>新增最新动态</h3>
+          <p>2024.11.28增加最新动态部分，持续记录更新内容</p>
+        </div>
+        <!-- 更多更新 -->
+      </section>
     </main>
 
-
     <footer>
-        <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
+      <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
     </footer>
 
-    <script>
-        // 简单的动画效果，当页面加载完成后，卡片淡入
-        window.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('.card').forEach(card => {
-                card.style.opacity = 0;
-                card.offsetHeight; // 触发重绘
-                card.style.transition = 'opacity 0.5s ease-in';
-                card.style.opacity = 1;
-            });
-        });
-    </script>
+    <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
+      ↑
+    </button>
 
-</body>
+    <script>
+      // 当用户滚动到一定位置时，显示回到顶部按钮
+      window.onscroll = function () {
+        showButton();
+      };
+      function showButton() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTopButton").style.display = "block";
+        } else {
+          document.getElementById("backToTopButton").style.display = "none";
+        }
+      }
+
+      // 点击按钮时，平滑滚动到页面顶部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 对于Safari
+        document.documentElement.scrollTop = 0; // 对于Chrome, Firefox, IE和Opera
+      }
+
+      // 简单的动画效果，当页面加载完成后，卡片淡入
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll(".card").forEach((card) => {
+          card.style.opacity = 0;
+          card.offsetHeight; // 触发重绘
+          card.style.transition = "opacity 0.5s ease-in";
+          card.style.opacity = 1;
+        });
+      });
+    </script>
+  </body>
 </html>
