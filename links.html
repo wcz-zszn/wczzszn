@@ -4,11 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>七九官网</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     />
     <style>
+      body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f8f8;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar {
+        background-color: #242424;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .resource-cards {
+        gap: 30px; /* 增加卡片之间的间距 */
+      }
+
+      .card {
+        border-radius: 8px; /* 增加卡片的圆角 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加卡片的阴影 */
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 悬停时增加阴影 */
+      }
+
+      .btn {
+        border-radius: 8px; /* 增加按钮的圆角 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 增加按钮的阴影 */
+      }
+
+      .btn:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 悬停时增加阴影 */
+      }
+
+      footer {
+        background-color: #242424;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      #backToTopButton {
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      #backToTopButton:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      body,
+      .navbar,
+      .intro,
+      .quote-of-the-day,
+      .latest-updates,
+      .update-item,
+      .card,
+      .btn {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
       body,
       h1,
       p {
@@ -56,13 +130,13 @@
         margin-bottom: 20px;
         padding: 20px;
         text-align: center;
-        background-color: #f9f9f9; /* 增加背景颜色 */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加阴影和变换效果 */
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .links-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠标悬停时的阴影效果 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .links-item img {
@@ -104,6 +178,26 @@
         background-color: #4cae4c;
       }
 
+      #backToTopButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #5cb85c;
+        color: white;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 50%;
+        font-size: 18px;
+        display: none;
+      }
+
+      #backToTopButton:hover {
+        background-color: #4cae4c;
+      }
+
       @media screen and (max-width: 768px) {
         .navbar {
           flex-direction: column;
@@ -120,11 +214,11 @@
       <nav class="navbar">
         <div class="logo">七九官网</div>
         <ul class="nav-links">
-          <li><a href="index.html">首页</a></li>
-          <li><a href="resources.html">资源</a></li>
-          <li><a href="about.html">关于本站</a></li>
-          <li><a href="contact.html">联系站长</a></li>
-          <li><a href="links.html" class="active">友情链接</a></li>
+            <li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="resources.html"><i class="fa fa-book"></i> 资源</a></li>
+            <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a></li>
+            <li><a href="links.html" class="active"><i class="fa fa-link"></i> 友情链接</a></li>
         </ul>
       </nav>
     </header>
@@ -212,12 +306,12 @@
           <a href="https://www.cbaigui.com/" target="_blank" class="btn">GO</a>
         </div>
         <div class="links-item">
-            <h3>在线喂金鱼</h3>
-            <p>一个非常有趣的网站，可以在线喂金鱼，非常治愈，适合放松心情。</p>
-            <p>个人体验：奇奇怪怪</p>
-            <a href="https://goldfishies.com/" target="_blank" class="btn">GO</a>
-          </div>
-        <!-- 链接项 -->
+          <h3>在线喂金鱼</h3>
+          <p>一个非常有趣的网站，可以在线喂金鱼，非常治愈，适合放松心情。</p>
+          <p>个人体验：奇奇怪怪</p>
+          <a href="https://goldfishies.com/" target="_blank" class="btn">GO</a>
+        </div>
+        <!-- 友情链接内容 -->
       </section>
     </main>
 
@@ -225,24 +319,50 @@
       <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
     </footer>
 
+    <!-- 回到顶部按钮 -->
+    <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
+      ↑
+    </button>
+
     <script>
+      // 回到顶部按钮的显示与隐藏逻辑
+      window.onscroll = function () {
+        showButton();
+      };
+      function showButton() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("backToTopButton").style.display = "block";
+        } else {
+          document.getElementById("backToTopButton").style.display = "none";
+        }
+      }
+
+      // 平滑滚动到页面顶部
+      function scrollToTop() {
+        document.body.scrollTop = 0; // 对于Safari
+        document.documentElement.scrollTop = 0; // 对于Chrome, Firefox, IE和Opera
+      }
+
+      // 搜索功能逻辑
       function searchLinks() {
         var searchQuery = document
           .getElementById("searchQuery")
           .value.trim()
-          .toLowerCase(); // 去除前后空格并转换为小写
+          .toLowerCase();
         var searchResults = document.getElementById("searchResults");
         var noResults = document.getElementById("noResults");
 
         if (searchQuery === "") {
-          // 如果搜索词为空，清空搜索结果并隐藏“无结果”信息
           searchResults.innerHTML = "";
           noResults.style.display = "none";
-          return; // 退出函数
+          return;
         }
 
-        searchResults.innerHTML = ""; // 清空之前的搜索结果
-        noResults.style.display = "none"; // 默认隐藏无结果信息
+        searchResults.innerHTML = "";
+        noResults.style.display = "none";
 
         var found = false;
         var linksItems = document.querySelectorAll(".links-item");
@@ -256,7 +376,6 @@
           ) {
             found = true;
             var cloneItem = item.cloneNode(true);
-            // 移除原有的链接和按钮，只保留内容
             cloneItem.querySelectorAll("a").forEach(function (link) {
               link.remove();
             });
@@ -265,7 +384,7 @@
         });
 
         if (!found) {
-          noResults.style.display = "block"; // 如果没有找到结果，显示“无结果”信息
+          noResults.style.display = "block";
         }
       }
     </script>
