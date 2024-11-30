@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>七九官网</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -308,76 +311,135 @@
     </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">七九官网</div>
-        <ul class="nav-links">
-            <li><a href="#home" class="active"><i class="fa fa-home"></i> 首页</a></li>
-            <li><a href="resources.html"><i class="fa fa-book"></i> 资源</a></li>
-            <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
-            <li><a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a></li>
-            <li><a href="links.html"><i class="fa fa-link"></i> 友情链接</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div
+      id="passwordModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="background-color: white; padding: 20px; border-radius: 5px">
+        <h2>七九官网欢迎您</h2>
+        <h3>请输入密码</h3>
+        <input type="password" id="passwordInput" />
+        <br>
+        <br>
+        <center><button onclick="checkPassword()">提交</button></center>
+      </div>
+    </div>
+    <div id="mainContent" style="display: none">
+      <header>
+        <nav class="navbar">
+          <div class="logo">七九官网</div>
+          <ul class="nav-links">
+            <li>
+              <a href="#home" class="active"><i class="fa fa-home"></i> 首页</a>
+            </li>
+            <li>
+              <a href="resources.html"><i class="fa fa-book"></i> 资源</a>
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fa fa-info-circle"></i> 关于本站</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a>
+            </li>
+            <li>
+              <a href="links.html"><i class="fa fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <section class="intro" id="home">
-        <h1><strong>欢迎来到七九班官网</strong></h1>
-        <p><strong>探索无限可能，分享知识与智慧。</strong></p>
-        <p>本站由雪碧bir（王崇治）制作，致力于为您提供最优质的资源分享平台。</p>
-        <p><strong>特别鸣谢 ：李乐童（宣传）</strong></p>
-      </section>
+      <main>
+        <section class="intro" id="home">
+          <h1><strong>欢迎来到七九班官网</strong></h1>
+          <p><strong>探索无限可能，分享知识与智慧。</strong></p>
+          <p>
+            本站由雪碧bir（王崇治）制作，致力于为您提供最优质的资源分享平台。
+          </p>
+          <p><strong>特别鸣谢 ：李乐童（宣传）</strong></p>
+        </section>
 
-      <section class="quote-of-the-day">
-        <h2>每日一句</h2>
-        <p>
-          无论种子散落在何处，都会长出一棵树，向着天空，挣扎生长。
-          ---贝蒂·史密斯
-        </p>
-      </section>
+        <section class="quote-of-the-day">
+          <h2>每日一句</h2>
+          <p>
+            无论种子散落在何处，都会长出一棵树，向着天空，挣扎生长。
+            ---贝蒂·史密斯
+          </p>
+        </section>
 
-      <section class="latest-updates">
-        <h2>最新动态</h2>
-        <div class="update-item">
+        <section class="latest-updates">
+          <h2>最新动态</h2>
+          <div class="update-item">
             <h3>新增导航栏图标</h3>
-            <p>
-              2024.11.29增加导航栏图标
-            </p>
+            <p>2024.11.29增加导航栏图标</p>
           </div>
           <div class="update-item">
             <h3>更新友情链接内容</h3>
+            <p>2024.11.29更新友情链接内容</p>
+          </div>
+          <div class="update-item">
+            <h3>新增友情链接</h3>
             <p>
-              2024.11.29更新友情链接内容
+              2024.11.28增加友情链接部分，其中分享有用、有趣的网站，可直达网站
             </p>
           </div>
-        <div class="update-item">
-          <h3>新增友情链接</h3>
-          <p>
-            2024.11.28增加友情链接部分，其中分享有用、有趣的网站，可直达网站
-          </p>
-        </div>
-        <div class="update-item">
-          <h3>新增每日一句</h3>
-          <p>2024.11.28增加每日一句部分，持续更新好句</p>
-        </div>
-        <div class="update-item">
-          <h3>新增最新动态</h3>
-          <p>2024.11.28增加最新动态部分，持续记录更新内容</p>
-        </div>
-        <!-- 更多更新 -->
-      </section>
-    </main>
+          <div class="update-item">
+            <h3>新增每日一句</h3>
+            <p>2024.11.28增加每日一句部分，持续更新好句</p>
+          </div>
+          <div class="update-item">
+            <h3>新增最新动态</h3>
+            <p>2024.11.28增加最新动态部分，持续记录更新内容</p>
+          </div>
+          <!-- 更多更新 -->
+        </section>
+      </main>
 
-    <footer>
-      <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
-    </footer>
+      <footer>
+        <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
+      </footer>
 
-    <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
-      ↑
-    </button>
+      <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
+        ↑
+      </button>
+    </div>
 
     <script>
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        if (password === "jz79") {
+          // 假设正确的密码是"jz79"
+          sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+        } else {
+          alert("密码错误");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查sessionStorage中是否有密码标识
+        if (sessionStorage.getItem("password") === "correct") {
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+        } else {
+          document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+        }
+      });
+
       // 当用户滚动到一定位置时，显示回到顶部按钮
       window.onscroll = function () {
         showButton();
