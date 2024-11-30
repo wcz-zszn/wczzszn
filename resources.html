@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>资源页面</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -199,55 +202,117 @@
     </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">七九官网</div>
-        <ul class="nav-links">
-            <li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
-            <li><a href="resources.html" class="active"><i class="fa fa-book"></i> 资源</a></li>
-            <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
-            <li><a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a></li>
-            <li><a href="links.html"><i class="fa fa-link"></i> 友情链接</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div
+      id="passwordModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="background-color: white; padding: 20px; border-radius: 5px">
+        <h2>七九官网欢迎您</h2>
+        <h3>请输入密码</h3>
+        <input type="password" id="passwordInput" />
+        <br>
+        <br>
+        <center><button onclick="checkPassword()">提交</button></center>
+      </div>
+    </div>
+    <div id="mainContent" style="display: none">
+      <header>
+        <nav class="navbar">
+          <div class="logo">七九官网</div>
+          <ul class="nav-links">
+            <li>
+              <a href="index.html"><i class="fa fa-home"></i> 首页</a>
+            </li>
+            <li>
+              <a href="resources.html" class="active"
+                ><i class="fa fa-book"></i> 资源</a
+              >
+            </li>
+            <li>
+              <a href="about.html"
+                ><i class="fa fa-info-circle"></i> 关于本站</a
+              >
+            </li>
+            <li>
+              <a href="contact.html"><i class="fa fa-envelope"></i> 联系站长</a>
+            </li>
+            <li>
+              <a href="links.html"><i class="fa fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-    <main class="container">
-      <section class="search-container">
-        <input type="text" id="searchInput" placeholder="搜索资源..." />
-        <button onclick="filterResources()">搜索</button>
-      </section>
+      <main class="container">
+        <section class="search-container">
+          <input type="text" id="searchInput" placeholder="搜索资源..." />
+          <button onclick="filterResources()">搜索</button>
+        </section>
 
-      <section class="resource-list">
-        <h2>资源列表(文件打开密码：jzxl)</h2>
-        <div id="noResults" class="no-results" style="display: none">
-          乱搜什么？我这没有！清空搜索栏再点击搜索显示全部资源！！！
-        </div>
-        <!-- 资源项 -->
-        <div class="resource-item" data-tags="极域杀手 退出软件">
-          <h3>极域杀手（退出极域软件）</h3>
-          <p>众所周知，机房中有一个名为“极域课堂管理软件”的Rubbish软件……</p>
-          <p>
-            IN
-            fact，退出它十分easy，但每节课都是有作业的，我们怎么才能在既能认真听课又能干自己想干的事情呢？
-          </p>
-          <p>这个软件名为JiYuTrainer，相信他可以帮助你（不是广告）</p>
-          <a
-            href="https://wwqj.lanzouv.com/iMc8g2g01noh"
-            target="_blank"
-            class="btn"
-            >I want it</a
-          >
-        </div>
-        <!-- 更多资源项 -->
-      </section>
-    </main>
+        <section class="resource-list">
+          <h2>资源列表(文件打开密码：jzxl)</h2>
+          <div id="noResults" class="no-results" style="display: none">
+            乱搜什么？我这没有！清空搜索栏再点击搜索显示全部资源！！！
+          </div>
+          <!-- 资源项 -->
+          <div class="resource-item" data-tags="极域杀手 退出软件">
+            <h3>极域杀手（退出极域软件）</h3>
+            <p>众所周知，机房中有一个名为“极域课堂管理软件”的Rubbish软件……</p>
+            <p>
+              IN
+              fact，退出它十分easy，但每节课都是有作业的，我们怎么才能在既能认真听课又能干自己想干的事情呢？
+            </p>
+            <p>这个软件名为JiYuTrainer，相信他可以帮助你（不是广告）</p>
+            <a
+              href="https://wwqj.lanzouv.com/iMc8g2g01noh"
+              target="_blank"
+              class="btn"
+              >I want it</a
+            >
+          </div>
+          <!-- 更多资源项 -->
+        </section>
+      </main>
 
-    <footer>
-      <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
-    </footer>
+      <footer>
+        <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
+      </footer>
+    </div>
 
     <script>
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        if (password === "jz79") {
+          // 假设正确的密码是"jz79"
+          sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+        } else {
+          alert("密码错误");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查sessionStorage中是否有密码标识
+        if (sessionStorage.getItem("password") === "correct") {
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+        } else {
+          document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+        }
+      });
       function filterResources() {
         const searchTerm = document
           .getElementById("searchInput")
