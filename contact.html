@@ -179,6 +179,32 @@
     </style>
   </head>
   <body>
+    <div
+      id="passwordModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="background-color: white; padding: 20px; border-radius: 5px">
+        <h2>七九官网欢迎您</h2>
+        <h3>请输入密码</h3>
+        <input type="password" id="passwordInput" />
+        <br>
+        <br>
+        <center><button onclick="checkPassword()">提交</button></center>
+      </div>
+    </div>
+    <div id="mainContent" style="display: none">
     <header>
       <nav class="navbar">
         <div class="logo">七九官网</div>
@@ -186,7 +212,7 @@
             <li><a href="index.html"><i class="fa fa-home"></i> 首页</a></li>
             <li><a href="resources.html"><i class="fa fa-book"></i> 资源</a></li>
             <li><a href="about.html"><i class="fa fa-info-circle"></i> 关于本站</a></li>
-            <li><a href="contact.html" class="active"><i class="fa fa-envelope"></i> 联系站长</a></li>
+            <li><a href="contact.html" calass="active"><i class="fa fa-envelope"></i> 联系站长</a></li>
             <li><a href="links.html"><i class="fa fa-link"></i> 友情链接</a></li>
         </ul>
       </nav>
@@ -213,5 +239,29 @@
     <footer>
       <center><p>版权所有 © 2024 雪碧bir（王崇治）</p></center>
     </footer>
+    </div>
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        if (password === "jz79") {
+          // 假设正确的密码是"jz79"
+          sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+        } else {
+          alert("密码错误");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查sessionStorage中是否有密码标识
+        if (sessionStorage.getItem("password") === "correct") {
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+        } else {
+          document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+        }
+      });
+    </script>
   </body>
 </html>
