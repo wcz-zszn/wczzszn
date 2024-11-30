@@ -210,6 +210,32 @@
     </style>
   </head>
   <body>
+    <div
+      id="passwordModal"
+      style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="background-color: white; padding: 20px; border-radius: 5px">
+        <h2>七九官网欢迎您</h2>
+        <h3>请输入密码</h3>
+        <input type="password" id="passwordInput" />
+        <br>
+        <br>
+        <center><button onclick="checkPassword()">提交</button></center>
+      </div>
+    </div>
+    <div id="mainContent" style="display: none">
     <header>
       <nav class="navbar">
         <div class="logo">七九官网</div>
@@ -323,8 +349,30 @@
     <button onclick="scrollToTop()" id="backToTopButton" title="回到顶部">
       ↑
     </button>
+    </div>
 
     <script>
+      function checkPassword() {
+        var password = document.getElementById("passwordInput").value;
+        if (password === "jz79") {
+          // 假设正确的密码是"jz79"
+          sessionStorage.setItem("password", "correct"); // 使用sessionStorage存储密码状态
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+        } else {
+          alert("密码错误");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 检查sessionStorage中是否有密码标识
+        if (sessionStorage.getItem("password") === "correct") {
+          document.getElementById("mainContent").style.display = "block"; // 显示主要内容
+          document.getElementById("passwordModal").style.display = "none"; // 隐藏密码输入框
+        } else {
+          document.getElementById("passwordModal").style.display = "flex"; // 显示密码输入框
+        }
+      });
       // 回到顶部按钮的显示与隐藏逻辑
       window.onscroll = function () {
         showButton();
